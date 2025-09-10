@@ -1,0 +1,5 @@
+model: "yolov8n.pt"  # auto-downloads if missing
+confidence: 0.5
+iou: 0.4
+img_size: 640
+webcam_index: 0      # change to 1/2 if you have multiple cameras

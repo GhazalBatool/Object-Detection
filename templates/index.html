@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Detection</title>
+    <style>
+        body { text-align: center; font-family: Arial; }
+        video { border: 2px solid black; margin-top: 20px; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Object Detection</h1>
+    <div>
+        <button onclick="startCam()">Open Webcam</button>
+        <button onclick="stopCam()">Stop Webcam</button>
+    </div>
+    <div>
+        <img id="video" src="" width="800" height="550">
+       
+
+    </div>
+
+    <script>
+        function startCam() {
+            fetch('/start').then(() => {
+                document.getElementById('video').src = "/video_feed";
+            });
+        }
+
+        function stopCam() {
+            fetch('/stop').then(() => {
+                document.getElementById('video').src = "";
+            });
+        }
+    </script>
+</body>
+</html>
